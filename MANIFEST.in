@@ -1,1 +1,2 @@
 recursive-include nxstart/templates *
+include README.rst

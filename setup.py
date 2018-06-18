@@ -9,14 +9,16 @@ version = {}
 with open(os.path.join(dir_path, 'nxstart', 'version.py')) as fp:
     exec(fp.read(), version)
 
-# Get the long description from the README file
-with open(os.path.join(dir_path, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
 
 setup(
     name='nxstart',
     description='Nintendo Switch homebrew project generator',
-    long_description=long_description,
+    long_description=readme(),
     long_description_content_type='text/markdown',
     version=version['__version__'],
     url='https://github.com/roedesh/nxstart',
@@ -36,4 +38,8 @@ setup(
         'Bug Reports': 'https://github.com/roedesh/nxstart/issues',
         'Source': 'https://github.com/roedesh/nxstart',
     },
+    classifiers=[
+        'License :: MIT License',
+        'Programming Language :: Python :: 3.6',
+    ],
 )
