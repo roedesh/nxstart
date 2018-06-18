@@ -1,6 +1,8 @@
 # nx-start
 
-Project generator for Nintendo Switch homebrews. A work in progress.
+> Project generator for Nintendo Switch homebrews. A work in progress.
+
+[![PyPI version](https://badge.fury.io/py/nxstart.svg)](https://badge.fury.io/py/nxstart)
 
 ## Installation
 
