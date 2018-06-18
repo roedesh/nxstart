@@ -34,6 +34,6 @@ setup(
     ''',
     project_urls={
         'Bug Reports': 'https://github.com/roedesh/nxstart/issues',
-        'Source': 'https://github.com/roedesh/initnx',
+        'Source': 'https://github.com/roedesh/nxstart',
     },
 )
