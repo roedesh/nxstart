@@ -5,6 +5,9 @@ from nxstart import app
 
 
 class Context(object):
+    """
+    Context to be passed to the 'cpp' and 'js' methods.
+    """
 
     def __init__(self):
         self.name = None
@@ -25,8 +28,14 @@ def cli(ctx, name, author):
     ctx.author = author
 
 
-@cli.command('cpp', short_help='generate a libnx project')
+@cli.command('cpp', short_help='generate a new libnx project')
 @click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
 @pass_context
 def cpp(ctx, clion):
     app.cpp(ctx.name, ctx.author, clion, ctx.cwd)
+
+
+@cli.command('js', short_help='generate a new BrewJS project')
+@pass_context
+def js(ctx):
+    app.js(ctx.name, ctx.author, ctx.cwd)

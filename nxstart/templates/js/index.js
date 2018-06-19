@@ -1,8 +1,9 @@
 /**
- *  Brew.js example for Nintendo Switch: Hello World
- *  Source: https://github.com/BrewJS/Switch/blob/master/Examples/HelloWorld/HelloWorld.js
+ *  The main file for APP_NAME_PLACEHOLDER.
+ *  Original example file by BrewJS.
  *
  *  @author       APP_AUTHOR_PLACEHOLDER
+ *  Date:         DATE_PLACEHOLDER
  */
 
 // We set the background with a full blue color
@@ -14,19 +15,19 @@ text.show();
 
 // Main loop
 game.mainLoop(function () {
-  // We check pressed input.
-  var key = input.checkPressed();
-  // We get current X and Y values of our text.
-  if (key === input.A) {
-    // We create a random color and set it to the text.
-    var r = device.randomNumber(0, 255);
-    var g = device.randomNumber(0, 255);
-    var b = device.randomNumber(0, 255);
-    var color = {R: r, G: g, B: b};
-    text.color(color);
-  }
-  // If + is pressed, the main loop ends.
-  else if (key === input.Plus) game.exitLoop();
+    // We check pressed input.
+    var key = input.checkPressed();
+    // We get current X and Y values of our text.
+    if (key === input.A) {
+        // We create a random color and set it to the text.
+        var r = device.randomNumber(0, 255);
+        var g = device.randomNumber(0, 255);
+        var b = device.randomNumber(0, 255);
+        var color = {R: r, G: g, B: b};
+        text.color(color);
+    }
+    // If + is pressed, the main loop ends.
+    else if (key === input.Plus) game.exitLoop();
 });
 
 // Execution ends

@@ -1,1 +1,1 @@
-from nxstart.filebuilder import cpp, generic
+from nxstart.filebuilder import cpp, generic, js

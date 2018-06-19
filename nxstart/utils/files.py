@@ -1,5 +1,9 @@
 from os.path import join, dirname
 
+import os
+
+import click
+
 PROJECT_ROOT = dirname(dirname(__file__))
 
 
@@ -8,6 +12,7 @@ def get_full_path(*path):
     Get full path within project directory.
 
     :param path: Path to join with PROJECT_ROOT
+    :return Path to file or directory within project
     """
     return join(PROJECT_ROOT, *path)
 
@@ -28,3 +33,16 @@ def replace_in_file(file, replacements):
     with open(file, 'w') as outfile:
         for line in lines:
             outfile.write(line)
+
+
+def check_and_create_directory(folder_path):
+    """
+    Try to create the directory at folder_path. If the directory already exists, abort the application.
+
+    :param folder_path: Directory to create
+    """
+    if os.path.exists(folder_path):
+        click.echo('Directory at %s is not empty.' % folder_path, err=True)
+        raise click.Abort()
+
+    os.makedirs(folder_path)

@@ -5,7 +5,7 @@
  *  @version 1.0
  *
  *  This is the main file for APP_NAME_PLACEHOLDER.
- *  Original template file by WerWolv.
+ *  Original example file by WerWolv.
  */
 
 #include <switch.h>     //The nxlib header file. It includes the functions which allow you to talk to the switch software/hardware
