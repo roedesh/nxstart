@@ -4,6 +4,10 @@
 
 [![PyPI version](https://badge.fury.io/py/nxstart.svg)](https://badge.fury.io/py/nxstart)
 
+## Features
+- Generate a C/C++ ([libnx](https://github.com/switchbrew/libnx)) project using `nxstart cpp`
+- Generate a Javascript ([BrewJS](https://github.com/BrewJS)) project using `nxstart js`
+
 ## Installation
 
 Install from PyPi using [pip](http://www.pip-installer.org/en/latest), a package manager for
@@ -26,8 +30,8 @@ python setup.py install
 ```
 You may need to run the above commands with ``sudo``.
 
-## Getting Started
-To create a C/C++ libnx project simply run `nxstart cpp`. It will ask for a project name, author name and if you are 
+## Creating a C/C++ (libnx) project
+Run `nxstart cpp`. It will ask for a project name, author name and if you are 
 using CLion (IDE by Jetbrains). If you say yes to CLion, `CMakeLists.txt` will be included.
 
 The following project structure will be created:
@@ -47,6 +51,20 @@ project
     │   main.cpp    // Your main application file
 ```
 
+## Creating a Javascript (BrewJS) project
+Run `nxstart js`. It will ask for a project name and author name. The following project structure will be created:
+
+```
+project
+│   .editorconfig      
+│   HOW-TO-RUN.txt  // Explains how to run a BrewJS app on the Switch
+│   index.js        // Your main application file
+│
+└───assets
+│   
+```
+
+## Skip prompts
 To skip the prompts, provide the necessary flags. For example:
 ```bash
 nxstart -n "My new project" -a "John Doe" cpp --clion
@@ -58,4 +76,4 @@ nxstart -n "My new project" -a "John Doe" cpp --no-clion
 ```
 
 Support for 
-[PyNX](https://github.com/nx-python/PyNX) and [BrewJS](https://github.com/BrewJS) projects will be added soon.
+[PyNX](https://github.com/nx-python/PyNX) projects will be added soon.

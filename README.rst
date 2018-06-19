@@ -29,9 +29,9 @@ Or, you can `download the source code <https://github.com/roedesh/nxstart>`_ for
 
 You may need to run the above commands with ``sudo``.
 
-Getting Started
+Creating a C++ (libnx) project
 ===============
-To create a C/C++ libnx project simply run ``nxstart cpp``. It will ask for a project name, author name and if you are
+Run ``nxstart cpp``. It will ask for a project name, author name and if you are
 using CLion (IDE by Jetbrains). If you say yes to CLion, ``CMakeLists.txt`` will be included.
 
 The following project structure will be created:
@@ -51,7 +51,22 @@ The following project structure will be created:
      └───source
          │   main.cpp    // Your main application file
 
+Creating a JS (BrewJS) project
+===============
+Run ``nxstart js``. It will ask for a project name, author name. The following project structure will be created:
 
+.. code-block:: bash
+
+     project
+     │   .editorconfig
+     │   HOW-TO-RUN.txt  // Explains how to run a BrewJS app on the Switch.
+     │   index.js        // Your main application file
+     │
+     └───assets
+     │
+
+Skip prompts
+===============
 To skip the prompts, provide the necessary flags. For example:
 
 .. code-block:: bash
@@ -66,4 +81,4 @@ Or if you don't use CLion:
 
 
 Support for
-`PyNX <https://github.com/nx-python/PyNX>`_ and `BrewJS <https://github.com/BrewJS>`_ projects will be added soon.
+`PyNX <https://github.com/nx-python/PyNX>`_ projects will be added soon.
