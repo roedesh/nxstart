@@ -1,6 +1,4 @@
-from distutils import dirname
-
-from os.path import join
+from os.path import join, dirname
 
 PROJECT_ROOT = dirname(dirname(__file__))
 
