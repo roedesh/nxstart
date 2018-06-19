@@ -9,19 +9,19 @@
 Install from PyPi using [pip](http://www.pip-installer.org/en/latest), a package manager for
 Python.
 
-```
+```bash
 pip install nxstart
 ```
 
 Don't have pip installed? Try installing it, by running this from the
 command line:
 
-```
-curl https://bootstrap.pypa.io/get-pip.py | python
+```bash
+curl "https://bootstrap.pypa.io/get-pip.py" | python
 ```
 
 Or, you can [download the source code](#) for `nxstart` and then run:
-```
+```bash
 python setup.py install
 ```
 You may need to run the above commands with ``sudo``.
@@ -48,12 +48,12 @@ project
 ```
 
 To skip the prompts, provide the necessary flags. For example:
-```
+```bash
 nxstart -n "My new project" -a "John Doe" cpp --clion
 ```
 
 Or if you don't use CLion:
-```
+```bash
 nxstart -n "My new project" -a "John Doe" cpp --no-clion
 ```
 
