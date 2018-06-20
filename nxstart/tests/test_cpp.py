@@ -1,21 +1,23 @@
-import os
-import shutil
+# -*- coding: utf-8 -*-
+
+"""Includes tests for the 'cpp' command"""
 
 from click.testing import CliRunner
 
-from nxstart.tests.base import app_test_wrapper
-from nxstart.utils.files import get_full_path
+from nxstart.cli import cli
 
 
 def test_with_clion():
     runner = CliRunner()
-    result = runner.invoke(app_test_wrapper, input='Test Project\nRuud Schroën\ny\n')
-    cleanup()
+    with runner.isolated_filesystem():
+        result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'cpp', '--clion'])
     assert not result.exception
     assert result.output.endswith('Successfully created the libnx project!\n')
 
 
-def cleanup():
-    folder = get_full_path('test_project')
-    if os.path.exists(folder):
-        shutil.rmtree(get_full_path('test_project'))
+def test_without_clion():
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'cpp', '--no-clion'])
+    assert not result.exception
+    assert result.output.endswith('Successfully created the libnx project!\n')
