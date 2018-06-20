@@ -3,6 +3,7 @@
 > Project generator for Nintendo Switch homebrews. A work in progress.
 
 [![PyPI version](https://badge.fury.io/py/nxstart.svg)](https://badge.fury.io/py/nxstart)
+[![Build status](https://travis-ci.org/roedesh/nxstart.svg?branch=master)](https://travis-ci.org/roedesh/nxstart)
 
 ## Features
 - Generate a C/C++ ([libnx](https://github.com/switchbrew/libnx)) project using `nxstart cpp`
