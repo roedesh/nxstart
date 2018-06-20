@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+"""Includes functions for copying the BrewJS template files."""
+
 import datetime
 import os
 from distutils.dir_util import copy_tree
