@@ -114,8 +114,6 @@ Run ``nxstart pynx``. It will ask for a project name, author name. The following
     │   main.py        // Your main application file
     │   README.md
     │
-    └───assets
-    │
 
 Skip prompts
 ===============
