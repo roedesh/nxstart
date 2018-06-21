@@ -17,7 +17,7 @@ def create_brewjs_project(folder_path, name, author):
     :param name: Name of the project
     :param author: Name of the author
     """
-    template_folder = get_full_path(os.path.join('templates', 'js'))
+    template_folder = get_full_path(os.path.join('templates', 'brewjs'))
     copy_tree(template_folder, folder_path)
 
     main_js_file = os.path.join(folder_path, 'index.js')

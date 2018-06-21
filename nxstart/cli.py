@@ -28,14 +28,14 @@ def cli(ctx, name, author):
     ctx.author = author
 
 
-@cli.command('cpp', short_help='generate a new libnx project')
+@cli.command('libnx', short_help='generate a new libnx project')
 @click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
 @pass_context
-def cpp(ctx, clion):
-    app.cpp(ctx.name, ctx.author, clion, ctx.cwd)
+def libnx(ctx, clion):
+    app.libnx(ctx.name, ctx.author, clion, ctx.cwd)
 
 
-@cli.command('js', short_help='generate a new BrewJS project')
+@cli.command('brewjs', short_help='generate a new BrewJS project')
 @pass_context
-def js(ctx):
-    app.js(ctx.name, ctx.author, ctx.cwd)
+def brewjs(ctx):
+    app.brewjs(ctx.name, ctx.author, ctx.cwd)

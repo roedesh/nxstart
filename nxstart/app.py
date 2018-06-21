@@ -7,7 +7,7 @@ from nxstart.utils.files import check_and_create_directory
 from nxstart.utils.strings import generate_folder_name_and_path
 
 
-def cpp(name, author, clion, cwd):
+def libnx(name, author, clion, cwd):
     """
     Command that generates a libnx project.
 
@@ -19,16 +19,18 @@ def cpp(name, author, clion, cwd):
     folder_name, folder_path = generate_folder_name_and_path(name, cwd)
     check_and_create_directory(folder_path)
 
-    filebuilder.cpp.create_libnx_project(folder_path, name, author)
+    filebuilder.libnx.create_libnx_project(folder_path, name, author)
     filebuilder.generic.create_readme_file(folder_path, name)
 
     if clion:
-        filebuilder.cpp.create_cmake_lists_file(folder_path, folder_name)
+        filebuilder.libnx.modify_cmake_lists_file(folder_path, folder_name)
+    else:
+        filebuilder.libnx.remove_cmake_lists_file(folder_path)
 
     click.echo("Successfully created the libnx project!")
 
 
-def js(name, author, cwd):
+def brewjs(name, author, cwd):
     """
     Command that generates a BrewJS project.
 
@@ -39,7 +41,7 @@ def js(name, author, cwd):
     folder_name, folder_path = generate_folder_name_and_path(name, cwd)
     check_and_create_directory(folder_path)
 
-    filebuilder.js.create_brewjs_project(folder_path, name, author)
+    filebuilder.brewjs.create_brewjs_project(folder_path, name, author)
     filebuilder.generic.create_readme_file(folder_path, name)
 
     click.echo("Successfully created the BrewJS project!")
