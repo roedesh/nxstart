@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     socketInitializeDefault();
 
     // Sets up printf to be passed to our nxlink server on the computer
-    nxlinkStdio();
+    // nxlinkStdio();
 
     // Setup the console
     consoleInit(nullptr);

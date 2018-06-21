@@ -25,11 +25,34 @@ def libnx(name, author, clion, cwd):
     filebuilder.generic.create_readme_file(folder_path, name)
 
     if clion:
-        filebuilder.libnx.modify_cmake_lists_file(folder_path, folder_name)
+        filebuilder.generic.modify_cmake_lists_file(folder_path, folder_name)
     else:
-        filebuilder.libnx.remove_cmake_lists_file(folder_path)
+        filebuilder.generic.remove_cmake_lists_file(folder_path)
 
     click.echo("Successfully created the libnx project!")
+
+
+def libt(name, author, clion, cwd):
+    """
+    Function that holds the logic for the 'libt' command.
+
+    :param name: Name of the project
+    :param author: Name of the author
+    :param clion: Using CLion
+    :param cwd: Current working directory
+    """
+    folder_name, folder_path = generate_folder_name_and_path(name, cwd)
+    check_and_create_directory(folder_path)
+
+    filebuilder.libt.create_libt_project(folder_path, name, author)
+    filebuilder.generic.create_readme_file(folder_path, name)
+
+    if clion:
+        filebuilder.generic.modify_cmake_lists_file(folder_path, folder_name)
+    else:
+        filebuilder.generic.remove_cmake_lists_file(folder_path)
+
+    click.echo("Successfully created the libtransistor project!")
 
 
 def brewjs(name, author, cwd):
