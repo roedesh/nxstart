@@ -7,7 +7,7 @@ from click.testing import CliRunner
 from nxstart.cli import cli
 
 
-def test_js():
+def test_brewjs():
     runner = CliRunner()
     with runner.isolated_filesystem():
         result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'brewjs'])

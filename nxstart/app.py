@@ -1,4 +1,6 @@
-import os
+# -*- coding: utf-8 -*-
+
+"""Defines the logic for the commands."""
 
 import click
 
@@ -9,7 +11,7 @@ from nxstart.utils.strings import generate_folder_name_and_path
 
 def libnx(name, author, clion, cwd):
     """
-    Command that generates a libnx project.
+    Function that holds the logic for the 'libnx' command.
 
     :param name: Name of the project
     :param author: Name of the author
@@ -32,7 +34,7 @@ def libnx(name, author, clion, cwd):
 
 def brewjs(name, author, cwd):
     """
-    Command that generates a BrewJS project.
+    Function that holds the logic for the 'brewjs' command.
 
     :param name: Name of the project
     :param author: Name of the author
@@ -47,7 +49,18 @@ def brewjs(name, author, cwd):
     click.echo("Successfully created the BrewJS project!")
 
 
+def pynx(name, author, cwd):
+    """
+    Function that holds the logic for the 'pynx' command.
 
+    :param name: Name of the project
+    :param author: Name of the author
+    :param cwd: Current working directory
+    """
+    folder_name, folder_path = generate_folder_name_and_path(name, cwd)
+    check_and_create_directory(folder_path)
 
+    filebuilder.pynx.create_pynx_project(folder_path, name, author)
+    filebuilder.generic.create_readme_file(folder_path, name)
 
-
+    click.echo("Successfully created the PyNX project!")
