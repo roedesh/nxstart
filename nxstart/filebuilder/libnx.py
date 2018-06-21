@@ -4,7 +4,6 @@
 
 import datetime
 import os
-import shutil
 from distutils.dir_util import copy_tree
 
 from nxstart.utils.files import get_full_path, replace_in_file
@@ -19,7 +18,7 @@ def create_libnx_project(folder_path, name, author):
     :param name: Name of the project
     :param author: Name of the author
     """
-    template_folder = get_full_path(os.path.join('templates', 'cpp'))
+    template_folder = get_full_path(os.path.join('templates', 'libnx'))
     copy_tree(template_folder, folder_path)
 
     main_cpp_file = os.path.join(folder_path, 'source', 'main.cpp')
@@ -38,19 +37,23 @@ def create_libnx_project(folder_path, name, author):
     replace_in_file(makefile, makefile_replacements)
 
 
-def create_cmake_lists_file(folder_path, folder_name):
+def remove_cmake_lists_file(folder_path):
     """
-    Copies the CMakeLists.txt file from the templates folder to folder_path,
-    and will use folder_name as the project name.
+    Removes the CMakeLists.txt file inside the folder at folder_path.
 
-    This is useful for people who use CLion as their IDE.
+    :param folder_path: Path to created folder
+    """
+    cmake_lists_file = os.path.join(folder_path, 'CMakeLists.txt')
+    os.remove(cmake_lists_file)
 
-    :param folder_path: Path to copy the file to
+
+def modify_cmake_lists_file(folder_path, folder_name):
+    """
+    Modifies the CMakeLists.txt file from folder_path, and will use folder_name as the project name.
+
+    :param folder_path: Path to created folder
     :param folder_name: Project folder name
     """
-    template_cmake_lists_file = get_full_path(os.path.join('templates', 'CMakeLists.txt'))
-    shutil.copy2(template_cmake_lists_file, folder_path)
-
     cmake_lists_file = os.path.join(folder_path, 'CMakeLists.txt')
     cmake_lists_file_replacements = {
         'FOLDER_NAME_PLACEHOLDER': folder_name

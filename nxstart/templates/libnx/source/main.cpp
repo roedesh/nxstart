@@ -2,7 +2,7 @@
  *  @file    main.cpp
  *  @author  APP_AUTHOR_PLACEHOLDER
  *  @date    DATE_PLACEHOLDER
- *  @version 1.0
+ *  @version 0.0.1
  *
  *  This is the main file for APP_NAME_PLACEHOLDER.
  *  Original example file by WerWolv.
