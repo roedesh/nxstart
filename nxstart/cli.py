@@ -5,6 +5,10 @@
 import click
 import os
 
+import py
+import pytest
+import sys
+
 from nxstart import app
 
 
@@ -32,7 +36,7 @@ def cli(ctx, name, author):
     ctx.author = author
 
 
-@cli.command('libnx', short_help='create a new libnx project (C/C++)')
+@cli.command('libnx', short_help='create a new libnx project (C++)')
 @click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
 @pass_context
 def libnx(ctx, clion):
@@ -45,7 +49,7 @@ def libnx(ctx, clion):
     app.libnx(ctx.name, ctx.author, clion, ctx.cwd)
 
 
-@cli.command('libt', short_help='create a new libtransistor project (C/C++)')
+@cli.command('libt', short_help='create a new libtransistor project (C)')
 @click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
 @pass_context
 def libnx(ctx, clion):
@@ -73,7 +77,7 @@ def brewjs(ctx):
 @pass_context
 def pynx(ctx):
     """
-    Command for generating a BrewJS project.
+    Command for generating a PyNX project.
 
     :param ctx: Context
     """

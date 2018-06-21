@@ -69,12 +69,13 @@ project
 │   CMakeLists.txt  // Only if you use CLion
 │   icon.jpg
 │   main.c          // Your main application file
-│   Makefile        
+│   Makefile
+│   README.md           
 │
 ```
 
 ## Creating a BrewJS (Javascript) project
-Run `nxstart js`. It will ask for a project name and author name. The following project structure will be created:
+Run `nxstart brewjs`. It will ask for a project name and author name. The following project structure will be created:
 
 ```
 project
@@ -82,19 +83,21 @@ project
 │   .gitignore     
 │   HOW-TO-RUN.txt  // Explains how to run a BrewJS app on the Switch
 │   index.js        // Your main application file
+│   README.md   
 │
 └───assets
 │   
 ```
 
 ## Creating a PyNX (Python) project
-Run `nxstart js`. It will ask for a project name and author name. The following project structure will be created:
+Run `nxstart pynx`. It will ask for a project name and author name. The following project structure will be created:
 
 ```
 project
 │   .editorconfig 
 │   .gitignore     
 │   main.py        // Your main application file
+│   README.md   
 │   
 ```
 
@@ -109,5 +112,3 @@ Or if you don't use CLion:
 nxstart -n "My new project" -a "John Doe" cpp --no-clion
 ```
 
-Support for 
-[PyNX](https://github.com/nx-python/PyNX) projects will be added soon.
