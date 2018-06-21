@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+"""Includes functions for working with the filesystem."""
+
 from os.path import join, dirname
 
 import os

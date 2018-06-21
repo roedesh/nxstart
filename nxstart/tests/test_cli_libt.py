@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Includes tests for the 'libnx' command"""
+"""Includes tests for the 'libt' command"""
 
 from click.testing import CliRunner
 
