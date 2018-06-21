@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+"""Includes functions for manipulating strings."""
+
 import os
 
 

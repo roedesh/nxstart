@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Includes test for the 'js' command"""
+"""Includes test for the 'brewjs' command"""
 
 from click.testing import CliRunner
 

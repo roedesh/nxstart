@@ -5,6 +5,10 @@
 import click
 import os
 
+import py
+import pytest
+import sys
+
 from nxstart import app
 
 
@@ -28,18 +32,11 @@ pass_context = click.make_pass_decorator(Context, ensure=True)
               help='The full name of the author')
 @pass_context
 def cli(ctx, name, author):
-    """
-    Main command group.
-
-    :param ctx: Context
-    :param name: Project name
-    :param author: Project author
-    """
     ctx.name = name
     ctx.author = author
 
 
-@cli.command('libnx', short_help='generate a new libnx project')
+@cli.command('libnx', short_help='create a new libnx project (C++)')
 @click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
 @pass_context
 def libnx(ctx, clion):
@@ -52,7 +49,20 @@ def libnx(ctx, clion):
     app.libnx(ctx.name, ctx.author, clion, ctx.cwd)
 
 
-@cli.command('brewjs', short_help='generate a new BrewJS project')
+@cli.command('libt', short_help='create a new libtransistor project (C)')
+@click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
+@pass_context
+def libnx(ctx, clion):
+    """
+    Command for generating a libnx project.
+
+    :param ctx: Context
+    :param clion: Using CLion
+    """
+    app.libnx(ctx.name, ctx.author, clion, ctx.cwd)
+
+
+@cli.command('brewjs', short_help='create a new BrewJS project (Javascript)')
 @pass_context
 def brewjs(ctx):
     """
@@ -63,11 +73,11 @@ def brewjs(ctx):
     app.brewjs(ctx.name, ctx.author, ctx.cwd)
 
 
-@cli.command('pynx', short_help='generate a new PyNX project')
+@cli.command('pynx', short_help='create a new PyNX project (Python)')
 @pass_context
 def pynx(ctx):
     """
-    Command for generating a BrewJS project.
+    Command for generating a PyNX project.
 
     :param ctx: Context
     """
