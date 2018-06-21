@@ -104,11 +104,11 @@ project
 ## Skip prompts
 To skip the prompts, provide the necessary flags. For example:
 ```bash
-nxstart -n "My new project" -a "John Doe" cpp --clion
+nxstart -n "My new project" -a "John Doe" libnx --clion
 ```
 
 Or if you don't use CLion:
 ```bash
-nxstart -n "My new project" -a "John Doe" cpp --no-clion
+nxstart -n "My new project" -a "John Doe" libnx --no-clion
 ```
 
