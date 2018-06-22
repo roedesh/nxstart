@@ -113,7 +113,7 @@ nxstart -n "My new project" -a "John Doe" libnx --no-clion
 ```
 
 ## Badge for nx-start projects
-If you created a new project using this tool and you want to show some love, there is a fancy badge you can add to your README.md.
+If you created a new project using this tool and you want to show some love, there is a fancy badge you can add to your README file.
 
 [![created_with nxstart](https://img.shields.io/badge/created_with-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
 
