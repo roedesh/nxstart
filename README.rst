@@ -127,3 +127,4 @@ Or if you don't use CLion:
 .. code-block:: bash
 
      $ nxstart -n "My new project" -a "John Doe" libnx --no-clion
+

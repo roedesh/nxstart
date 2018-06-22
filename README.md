@@ -44,8 +44,8 @@ project
 │   .editorconfig 
 │   .gitignore
 │   CMakeLists.txt  // Only if you use CLion
-│   icon.jpg
-│   Makefile        
+│   Makefile      
+│   icon.jpg  
 │   README.md
 │
 └───data
@@ -67,9 +67,9 @@ project
 │   .editorconfig 
 │   .gitignore
 │   CMakeLists.txt  // Only if you use CLion
-│   icon.jpg
 │   main.c          // Your main application file
 │   Makefile
+│   icon.jpg
 │   README.md           
 │
 ```
