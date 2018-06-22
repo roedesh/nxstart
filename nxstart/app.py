@@ -22,7 +22,7 @@ def libnx(name, author, clion, cwd):
     check_and_create_directory(folder_path)
 
     filebuilder.libnx.create_libnx_project(folder_path, name, author)
-    filebuilder.generic.create_readme_file(folder_path, name)
+    filebuilder.generic.modify_readme_file(folder_path, name, author)
 
     if clion:
         filebuilder.generic.modify_cmake_lists_file(folder_path, folder_name)
@@ -45,7 +45,7 @@ def libt(name, author, clion, cwd):
     check_and_create_directory(folder_path)
 
     filebuilder.libt.create_libt_project(folder_path, name, author)
-    filebuilder.generic.create_readme_file(folder_path, name)
+    filebuilder.generic.modify_readme_file(folder_path, name, author)
 
     if clion:
         filebuilder.generic.modify_cmake_lists_file(folder_path, folder_name)
@@ -67,7 +67,7 @@ def brewjs(name, author, cwd):
     check_and_create_directory(folder_path)
 
     filebuilder.brewjs.create_brewjs_project(folder_path, name, author)
-    filebuilder.generic.create_readme_file(folder_path, name)
+    filebuilder.generic.modify_readme_file(folder_path, name, author)
 
     click.echo("Successfully created the BrewJS project!")
 
@@ -84,6 +84,6 @@ def pynx(name, author, cwd):
     check_and_create_directory(folder_path)
 
     filebuilder.pynx.create_pynx_project(folder_path, name, author)
-    filebuilder.generic.create_readme_file(folder_path, name)
+    filebuilder.generic.modify_readme_file(folder_path, name, author)
 
     click.echo("Successfully created the PyNX project!")

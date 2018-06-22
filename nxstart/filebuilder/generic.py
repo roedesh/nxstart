@@ -8,20 +8,19 @@ import shutil
 from nxstart.utils.files import get_full_path, replace_in_file
 
 
-def create_readme_file(folder_path, name):
+def modify_readme_file(folder_path, name, author):
     """
-    Copies the README.md file from the templates folder to folder_path,
-    and will use name as the title of the document.
+    Simple helper for modifying README.md files.
 
-    :param folder_path: Path to copy the file to
-    :param name: Project name to use as the title
+    :param folder_path: Path where the README.md file is
+    :param name: Project name
+    :param author: Project author
     """
-    template_readme_file = get_full_path(os.path.join('templates', 'README.md'))
-    shutil.copy2(template_readme_file, folder_path)
-
     new_readme_file = os.path.join(folder_path, 'README.md')
     new_readme_file_replacements = {
-        'APP_NAME_PLACEHOLDER': name
+        'APP_NAME_PLACEHOLDER': name,
+        'APP_AUTHOR_PLACEHOLDER': author
+
     }
     replace_in_file(new_readme_file, new_readme_file_replacements)
 
