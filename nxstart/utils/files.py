@@ -50,3 +50,6 @@ def check_and_create_directory(folder_path):
         raise click.Abort()
 
     os.makedirs(folder_path)
+
+
+

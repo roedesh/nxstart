@@ -12,7 +12,7 @@ def test_libt_with_clion():
     with runner.isolated_filesystem():
         result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'libt', '--clion'])
     assert not result.exception
-    assert result.output.endswith('Successfully created the libnx project!\n')
+    assert result.output.endswith('Successfully created the libtransistor project!\n')
 
 
 def test_libt_without_clion():
@@ -20,4 +20,4 @@ def test_libt_without_clion():
     with runner.isolated_filesystem():
         result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'libt', '--no-clion'])
     assert not result.exception
-    assert result.output.endswith('Successfully created the libnx project!\n')
+    assert result.output.endswith('Successfully created the libtransistor project!\n')

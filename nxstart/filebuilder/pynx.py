@@ -28,4 +28,3 @@ def create_pynx_project(folder_path, name, author):
         'DATE_PLACEHOLDER': datetime.datetime.now().strftime("%Y-%m-%d")
     }
     replace_in_file(main_cpp_file, main_cpp_replacements)
-

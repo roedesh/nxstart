@@ -95,7 +95,6 @@ Run ``nxstart brewjs``. It will ask for a project name, author name. The followi
     project
     │   .editorconfig
     │   .gitignore
-    │   HOW-TO-RUN.txt  // Explains how to run a BrewJS app on the Switch.
     │   index.js        // Your main application file
     │   README.md
     │
@@ -128,3 +127,4 @@ Or if you don't use CLion:
 .. code-block:: bash
 
      $ nxstart -n "My new project" -a "John Doe" libnx --no-clion
+

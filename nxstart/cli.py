@@ -2,12 +2,9 @@
 
 """Defines the app context and commands."""
 
-import click
 import os
 
-import py
-import pytest
-import sys
+import click
 
 from nxstart import app
 
@@ -52,14 +49,14 @@ def libnx(ctx, clion):
 @cli.command('libt', short_help='create a new libtransistor project (C)')
 @click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
 @pass_context
-def libnx(ctx, clion):
+def libt(ctx, clion):
     """
-    Command for generating a libnx project.
+    Command for generating a libtransistor project.
 
     :param ctx: Context
     :param clion: Using CLion
     """
-    app.libnx(ctx.name, ctx.author, clion, ctx.cwd)
+    app.libt(ctx.name, ctx.author, clion, ctx.cwd)
 
 
 @cli.command('brewjs', short_help='create a new BrewJS project (Javascript)')
