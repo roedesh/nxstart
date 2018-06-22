@@ -81,7 +81,6 @@ Run `nxstart brewjs`. It will ask for a project name and author name. The follow
 project
 │   .editorconfig 
 │   .gitignore     
-│   HOW-TO-RUN.txt  // Explains how to run a BrewJS app on the Switch
 │   index.js        // Your main application file
 │   README.md   
 │
@@ -115,15 +114,15 @@ nxstart -n "My new project" -a "John Doe" libnx --no-clion
 ## Badge for nx-start projects
 If you created a new project using this tool and you want to show some love, there is a fancy badge you can add to your README file.
 
-[![created_with nxstart](https://img.shields.io/badge/created_with-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
+[![created_with nxstart](https://img.shields.io/badge/generated_by-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
 
 ### Markdown
 ```markdown
-[![created_with nxstart](https://img.shields.io/badge/created_with-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
+[![created_with nxstart](https://img.shields.io/badge/generated_by-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
 ```
 
 ### reStructuredText
 ```
-.. image:: https://img.shields.io/badge/created_with-nxstart-blue.svg
+.. image:: https://img.shields.io/badge/generated_by-nxstart-blue.svg
     :target: https://github.com/roedesh/nxstart
 ```
