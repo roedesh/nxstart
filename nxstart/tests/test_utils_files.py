@@ -5,8 +5,8 @@
 import os
 import shutil
 
-from nxstart.tests.helpers import DIRECTORY_NAME
-from nxstart.utils.files import check_and_create_directory, PROJECT_ROOT, get_full_path
+from nxstart.tests.helpers import DIRECTORY_NAME, assert_file_contains_strings
+from nxstart.utils.files import check_and_create_directory, PROJECT_ROOT, get_full_path, replace_in_file
 
 
 def test_get_full_path():
@@ -21,3 +21,14 @@ def test_check_and_create_directory():
     check_and_create_directory(new_folder_path)
     assert os.path.isdir(new_folder_path)
     shutil.rmtree(new_folder_path)
+
+
+def test_replace_in_file():
+    new_test_file_path = os.path.join(PROJECT_ROOT, 'tests', 'testfile.txt')
+    with open(new_test_file_path, 'w') as f:
+        f.write('TEXT_PLACEHOLDER')
+    replace_in_file(new_test_file_path, {
+        'TEXT_PLACEHOLDER': 'NEW_TEXT',
+    })
+    assert_file_contains_strings(new_test_file_path, ['NEW_TEXT'])
+

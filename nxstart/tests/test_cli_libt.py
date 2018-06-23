@@ -2,8 +2,6 @@
 
 """Includes tests for the 'libt' command"""
 
-import datetime
-import os
 from click.testing import CliRunner
 
 from nxstart.cli import cli

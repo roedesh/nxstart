@@ -1,6 +1,11 @@
+# -*- coding: utf-8 -*-
+
+"""Contains helper functions to use in tests"""
+
 import datetime
 import os
 
+# Some constants to be used in tests
 APP_NAME = 'Test project'
 APP_AUTHOR = 'Ruud Schroën'
 DATE_CREATED = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -9,7 +14,7 @@ DIRECTORY_NAME = 'test_project'
 
 def directory_exists():
     """
-    Check if DIRECTORY_NAME exists
+    Check if a folder called DIRECTORY_NAME exists
     """
     return os.path.isdir(DIRECTORY_NAME)
 
