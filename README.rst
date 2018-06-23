@@ -115,7 +115,7 @@ Run ``nxstart pynx``. It will ask for a project name, author name. The following
     │
 
 Skip prompts
-============pytest
+============
 To skip the prompts, provide the necessary flags. For example:
 
 .. code-block:: bash
