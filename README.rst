@@ -43,7 +43,7 @@ Or, you can `download the source code <https://github.com/roedesh/nxstart>`_ for
 You may need to run the above commands with ``sudo``.
 
 Generating a libnx (C++) project
-==============================
+================================
 Run ``nxstart libnx``. It will ask for a project name, author name and if you are
 using CLion (IDE by Jetbrains). If you say yes to CLion, ``CMakeLists.txt`` will be included.
 
@@ -68,7 +68,7 @@ The following project structure will be generated:
 
 
 Generating a libtransistor (C) project
-====================================
+======================================
 Run ``nxstart libt``. It will ask for a project name, author name and if you are
 using CLion (IDE by Jetbrains). If you say yes to CLion, ``CMakeLists.txt`` will be included.
 
@@ -87,7 +87,7 @@ The following project structure will be generated:
     │
 
 Generating a BrewJS (Javascript) project
-======================================
+========================================
 Run ``nxstart brewjs``. It will ask for a project name, author name. The following project structure will be generated:
 
 .. code-block:: bash
@@ -102,7 +102,7 @@ Run ``nxstart brewjs``. It will ask for a project name, author name. The followi
     │
 
 Generating a PyNX (Python) project
-================================
+==================================
 Run ``nxstart pynx``. It will ask for a project name, author name. The following project structure will be generated:
 
 .. code-block:: bash
@@ -115,7 +115,7 @@ Run ``nxstart pynx``. It will ask for a project name, author name. The following
     │
 
 Skip prompts
-===============
+============
 To skip the prompts, provide the necessary flags. For example:
 
 .. code-block:: bash

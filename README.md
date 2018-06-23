@@ -10,10 +10,10 @@
 <!--ts-->
    * [Features](#features)
    * [Installation](#installation)
-   * [Generating a libnx (C++) project](#generating-a-libnx-(c++)-project)
-   * [Generating a libtransistor (C) project](#generating-a-libtransistor-(c)-project)
-   * [Generating a BrewJS project](#generating-a-brewjs-(javascript)-project)
-   * [Generating a PyNX project](#generating-a-pynx-(python)-project)
+   * [Generating a libnx (C++) project](#generating-a-libnx-c++-project)
+   * [Generating a libtransistor (C) project](#generating-a-libtransistor-c-project)
+   * [Generating a BrewJS project](#generating-a-brewjs-javascript-project)
+   * [Generating a PyNX project](#generating-a-pynx-python-project)
    * [Skip prompts](#skip-prompts)
 <!--te-->
 
