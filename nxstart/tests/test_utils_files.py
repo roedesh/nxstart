@@ -5,6 +5,7 @@
 import os
 import shutil
 
+from nxstart.tests.helpers import DIRECTORY_NAME
 from nxstart.utils.files import check_and_create_directory, PROJECT_ROOT, get_full_path
 
 
@@ -15,8 +16,7 @@ def test_get_full_path():
 
 
 def test_check_and_create_directory():
-    new_folder_name = 'testfolder'
-    new_folder_path = os.path.join(PROJECT_ROOT, 'tests', new_folder_name)
+    new_folder_path = os.path.join(PROJECT_ROOT, 'tests', DIRECTORY_NAME)
 
     check_and_create_directory(new_folder_path)
     assert os.path.isdir(new_folder_path)
