@@ -5,6 +5,18 @@
 [![PyPI version](https://badge.fury.io/py/nxstart.svg)](https://badge.fury.io/py/nxstart)
 [![Build status](https://travis-ci.org/roedesh/nxstart.svg?branch=master)](https://travis-ci.org/roedesh/nxstart)
 
+## Table of Contents
+
+<!--ts-->
+   * [Features](#features)
+   * [Installation](#installation)
+   * [Generating a libnx (C++) project](#generating-a-libnx-(c++)-project)
+   * [Generating a libtransistor (C) project](#generating-a-libtransistor-(c)-project)
+   * [Generating a BrewJS project](#generating-a-brewjs-(javascript)-project)
+   * [Generating a PyNX project](#generating-a-pynx-(python)-project)
+   * [Skip prompts](#skip-prompts)
+<!--te-->
+
 ## Features
 - Generate a [libnx](https://github.com/switchbrew/libnx) (C++) project using `nxstart libnx`
 - Generate a [libtransistor](https://github.com/reswitched/libtransistor) (C) project using `nxstart libt`
@@ -33,11 +45,11 @@ python setup.py install
 ```
 You may need to run the above commands with ``sudo``.
 
-## Creating a libnx (C++) project
+## Generating a libnx (C++) project
 Run `nxstart libnx`. It will ask for a project name, author name and if you are 
 using CLion (IDE by Jetbrains). If you say yes to CLion, `CMakeLists.txt` will be included.
 
-The following project structure will be created:
+The following project structure will be generated:
 
 ```
 project
@@ -56,11 +68,11 @@ project
     │   main.cpp    // Your main application file
 ```
 
-## Creating a libtransistor (C) project
+## Generating a libtransistor (C) project
 Run `nxstart libt`. It will ask for a project name, author name and if you are 
 using CLion (IDE by Jetbrains). If you say yes to CLion, `CMakeLists.txt` will be included.
 
-The following project structure will be created:
+The following project structure will be generated:
 
 ```
 project
@@ -74,8 +86,8 @@ project
 │
 ```
 
-## Creating a BrewJS (Javascript) project
-Run `nxstart brewjs`. It will ask for a project name and author name. The following project structure will be created:
+## Generating a BrewJS (Javascript) project
+Run `nxstart brewjs`. It will ask for a project name and author name. The following project structure will be generated:
 
 ```
 project
@@ -88,8 +100,8 @@ project
 │   
 ```
 
-## Creating a PyNX (Python) project
-Run `nxstart pynx`. It will ask for a project name and author name. The following project structure will be created:
+## Generating a PyNX (Python) project
+Run `nxstart pynx`. It will ask for a project name and author name. The following project structure will be generated:
 
 ```
 project
