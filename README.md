@@ -1,6 +1,6 @@
 # nx-start
 
-> Project generator for Nintendo Switch homebrews. A work in progress.
+> Project generator for Nintendo Switch homebrews.
 
 [![PyPI version](https://badge.fury.io/py/nxstart.svg)](https://badge.fury.io/py/nxstart)
 [![Build status](https://travis-ci.org/roedesh/nxstart.svg?branch=master)](https://travis-ci.org/roedesh/nxstart)
@@ -109,20 +109,4 @@ nxstart -n "My new project" -a "John Doe" libnx --clion
 Or if you don't use CLion:
 ```bash
 nxstart -n "My new project" -a "John Doe" libnx --no-clion
-```
-
-## Badge for nx-start projects
-If you created a new project using this tool and you want to show some love, there is a fancy badge you can add to your README file.
-
-[![created_with nxstart](https://img.shields.io/badge/generated_by-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
-
-### Markdown
-```markdown
-[![created_with nxstart](https://img.shields.io/badge/generated_by-nxstart-blue.svg)](https://github.com/roedesh/nxstart)
-```
-
-### reStructuredText
-```
-.. image:: https://img.shields.io/badge/generated_by-nxstart-blue.svg
-    :target: https://github.com/roedesh/nxstart
 ```

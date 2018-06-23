@@ -1,7 +1,7 @@
 nx-start
 ########
 
-Project generator for Nintendo Switch homebrews. A work in progress.
+Project generator for Nintendo Switch homebrews.
 
 .. image:: https://travis-ci.org/roedesh/nxstart.svg?branch=master
     :target: https://travis-ci.org/roedesh/nxstart
