@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Includes tests for the 'libnx' command"""
+
 import datetime
 import os
 
@@ -8,13 +9,14 @@ from click.testing import CliRunner
 
 from nxstart.cli import cli
 from nxstart.tests.helpers import directory_exists, assert_readme_has_project_and_author_name, \
-    assert_makefile_has_project_and_author_name, assert_file_contains_strings, file_exists
+    assert_makefile_has_project_and_author_name, assert_file_contains_strings, file_exists, APP_AUTHOR, APP_NAME, \
+    DATE_CREATED
 
 
 def test_libnx_with_clion():
     runner = CliRunner()
     with runner.isolated_filesystem():
-        result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'libnx', '--clion'])
+        result = runner.invoke(cli, ['-n', APP_NAME, '-a', APP_AUTHOR, 'libnx', '--clion'])
         assert not result.exception
         assert result.output.endswith('Successfully created the libnx project!\n')
         assert directory_exists()
@@ -27,7 +29,7 @@ def test_libnx_with_clion():
 def test_libnx_without_clion():
     runner = CliRunner()
     with runner.isolated_filesystem():
-        result = runner.invoke(cli, ['-n', 'Test project', '-a', 'Ruud Schroën', 'libnx', '--no-clion'])
+        result = runner.invoke(cli, ['-n', APP_NAME, '-a', APP_AUTHOR, 'libnx', '--no-clion'])
         assert not result.exception
         assert result.output.endswith('Successfully created the libnx project!\n')
         assert directory_exists()
@@ -38,7 +40,4 @@ def test_libnx_without_clion():
 
 
 def main_cpp_has_valid_data():
-    assert_file_contains_strings(
-        os.path.join('source', 'main.cpp'),
-        ['Test project', 'Ruud Schroën', datetime.datetime.now().strftime("%Y-%m-%d")]
-    )
+    assert_file_contains_strings(os.path.join('source', 'main.cpp'), [APP_NAME, APP_AUTHOR, DATE_CREATED])

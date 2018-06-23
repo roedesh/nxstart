@@ -1,23 +1,35 @@
+import datetime
 import os
 
+APP_NAME = 'Test project'
+APP_AUTHOR = 'Ruud Schroën'
+DATE_CREATED = datetime.datetime.now().strftime("%Y-%m-%d")
 DIRECTORY_NAME = 'test_project'
 
 
 def directory_exists():
+    """
+    Check if DIRECTORY_NAME exists
+    """
     return os.path.isdir(DIRECTORY_NAME)
 
 
 def file_exists(file_path):
+    """
+    Check if the file at file_path exists.
+
+    :param file_path: File to check
+    """
     return os.path.isfile(os.path.join(DIRECTORY_NAME, file_path))
 
 
-def file_has_string(file_path, string):
-    if string in open(os.path.join(DIRECTORY_NAME, file_path)).read():
-        return True
-    return False
-
-
 def assert_file_contains_strings(file_path, strings):
+    """
+    Make sure that each given string is in the file.
+
+    :param file_path: File to check
+    :param strings: List of strings
+    """
     with open(os.path.join(DIRECTORY_NAME, file_path), 'r') as file:
         data = file.read().replace('\n', '')
         for s in strings:
@@ -25,8 +37,14 @@ def assert_file_contains_strings(file_path, strings):
 
 
 def assert_readme_has_project_and_author_name():
-    assert_file_contains_strings('README.md', ['Test project', 'Ruud Schroën'])
+    """
+    Checks that the README.md contains the project and author name.
+    """
+    assert_file_contains_strings('README.md', [APP_NAME, APP_AUTHOR])
 
 
 def assert_makefile_has_project_and_author_name():
-    assert_file_contains_strings('Makefile', ['Test project', 'Ruud Schroën'])
+    """
+    Check that the Makefile contains the project and author name.
+    """
+    assert_file_contains_strings('Makefile', [APP_NAME, APP_AUTHOR])
