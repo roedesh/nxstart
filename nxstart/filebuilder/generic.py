@@ -3,9 +3,8 @@
 """Includes generic functions such as copying the README.md file."""
 
 import os
-import shutil
 
-from nxstart.utils.files import get_full_path, replace_in_file
+from nxstart.utils.files import replace_in_file
 
 
 def modify_readme_file(folder_path, name, author):
