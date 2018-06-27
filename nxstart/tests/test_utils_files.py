@@ -17,13 +17,13 @@ def test_get_full_path():
 def test_check_and_create_directory(tmpdir):
     new_folder_path = tmpdir.join(DIRECTORY_NAME)
 
-    check_and_create_directory(new_folder_path)
+    check_and_create_directory(str(new_folder_path))
     assert os.path.isdir(new_folder_path)
 
 
 def test_replace_in_file(tmpdir):
     new_test_file_path = tmpdir.join('testfile.txt')
-    with open(new_test_file_path, 'w') as f:
+    with open(str(new_test_file_path), 'w') as f:
         f.write('TEXT_PLACEHOLDER')
     replace_in_file(new_test_file_path, {
         'TEXT_PLACEHOLDER': 'NEW_TEXT',
