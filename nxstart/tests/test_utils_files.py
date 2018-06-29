@@ -29,4 +29,3 @@ def test_replace_in_file(tmpdir):
         'TEXT_PLACEHOLDER': 'NEW_TEXT',
     })
     assert_file_contains_strings(new_test_file_path, ['NEW_TEXT'])
-

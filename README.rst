@@ -128,3 +128,7 @@ Or if you don't use CLion:
 
      $ nxstart -n "My new project" -a "John Doe" libnx --no-clion
 
+Running tests
+=============
+Tests can be run with the `pytest` command. If you are contributing code, make sure all tests are green before
+submitting a PR.

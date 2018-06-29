@@ -39,7 +39,15 @@ setup(
         'Source': 'https://github.com/roedesh/nxstart',
     },
     classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Topic :: Software Development :: Code Generators',
+        'Topic :: Utilities'
     ],
 )

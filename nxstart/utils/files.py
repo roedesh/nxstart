@@ -2,9 +2,8 @@
 
 """Includes functions for working with the filesystem."""
 
-from os.path import join, dirname
-
 import os
+from os.path import join, dirname
 
 import click
 
@@ -50,6 +49,3 @@ def check_and_create_directory(folder_path):
         raise click.Abort()
 
     os.makedirs(folder_path)
-
-
-
