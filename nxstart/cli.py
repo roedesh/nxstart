@@ -5,13 +5,14 @@
 import os
 
 import click
+from nxstart.version import __version__ as version
 
 from nxstart import app
 
 
 class Context(object):
     """
-    Context to be passed to the subcommands.
+    Context to be passed to the sub-commands.
     """
 
     def __init__(self):
@@ -24,11 +25,24 @@ pass_context = click.make_pass_decorator(Context, ensure=True)
 
 
 @click.group()
-@click.option('--name', '-n', default=None, prompt='Project name', help='The name of your project')
-@click.option('--author', '-a', default=None, prompt='Author name',
-              help='The full name of the author')
+@click.option('--name', '-n', default=None, help='The name of your project')
+@click.option('--author', '-a', default=None, help='The full name of the author')
 @pass_context
 def cli(ctx, name, author):
+    click.echo("""
+                                                             
+ #    # #    #        ####  #####   ##   #####  #####    
+ ##   #  #  #        #        #    #  #  #    #   #      
+ # #  #   ##   #####  ####    #   #    # #    #   #      
+ #  # #   ##              #   #   ###### #####    #      
+ #   ##  #  #        #    #   #   #    # #   #    #      
+ #    # #    #        ####    #   #    # #    #   #                                                          
+    """)
+    click.echo('v%s - by roedesh <Ruud Schroën>' % version)
+    if not name:
+        name = click.prompt('Please enter the name of your project', type=str)
+    if not author:
+        author = click.prompt('Please enter your name', type=str)
     ctx.name = name
     ctx.author = author
 

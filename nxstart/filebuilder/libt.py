@@ -14,7 +14,6 @@ def create_libt_project(folder_path, name, author):
     Copies the files from templates/base to folder_path and modifies Makefile and source/main.cpp
     to include the project name, author name and current date.
 
-    :param folder_name: Created folder name
     :param folder_path: Path to copy the files to
     :param name: Name of the project
     :param author: Name of the author
