@@ -32,4 +32,3 @@ def test_replace_in_file():
     })
     assert_file_contains_strings(new_test_file_path, ['NEW_TEXT'])
     os.remove(new_test_file_path)
-

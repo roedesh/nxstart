@@ -5,9 +5,9 @@
 import os
 
 import click
-from nxstart.version import __version__ as version
 
 from nxstart import app
+from nxstart.version import __version__ as version
 
 
 class Context(object):
