@@ -15,4 +15,5 @@ def test_brewjs():
         assert not result.exception
         assert result.output.endswith('Successfully created the BrewJS project!\n')
         assert directory_exists()
-        assert_file_contains_strings('index.js', [APP_NAME, APP_AUTHOR, DATE_CREATED])
+        assert_file_contains_strings('Source.js', [APP_NAME, APP_AUTHOR, DATE_CREATED])
+        assert_file_contains_strings('package.json', [APP_NAME, APP_AUTHOR])

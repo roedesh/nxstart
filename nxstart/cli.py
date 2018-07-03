@@ -7,6 +7,7 @@ import os
 import click
 
 from nxstart import app
+from nxstart.utils.strings import TITLE_TEXT, VERSION_STRING
 from nxstart.version import __version__ as version
 
 
@@ -29,16 +30,8 @@ pass_context = click.make_pass_decorator(Context, ensure=True)
 @click.option('--author', '-a', default=None, help='The full name of the author')
 @pass_context
 def cli(ctx, name, author):
-    click.echo("""
-                                                             
- #    # #    #        ####  #####   ##   #####  #####    
- ##   #  #  #        #        #    #  #  #    #   #      
- # #  #   ##   #####  ####    #   #    # #    #   #      
- #  # #   ##              #   #   ###### #####    #      
- #   ##  #  #        #    #   #   #    # #   #    #      
- #    # #    #        ####    #   #    # #    #   #                                                          
-    """)
-    click.echo('v%s - by roedesh <Ruud Schroën>' % version)
+    click.echo(TITLE_TEXT)
+    click.echo(VERSION_STRING)
     if not name:
         name = click.prompt('Please enter the name of your project', type=str)
     if not author:
