@@ -93,7 +93,8 @@ Run `nxstart brewjs`. It will ask for a project name and author name. The follow
 project
 │   .editorconfig 
 │   .gitignore     
-│   index.js        // Your main application file
+│   package.json
+│   Source.js        // Your main application file
 │   README.md   
 │
 └───assets
