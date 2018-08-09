@@ -6,6 +6,9 @@ Project generator for Nintendo Switch homebrews.
 .. image:: https://travis-ci.org/roedesh/nxstart.svg?branch=master
     :target: https://travis-ci.org/roedesh/nxstart
 
+.. image:: https://requires.io/github/roedesh/nxstart/requirements.svg?branch=master
+     :target: https://requires.io/github/roedesh/nxstart/requirements/?branch=master
+     :alt: Requirements Status
 
 
 Features

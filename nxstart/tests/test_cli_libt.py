@@ -5,8 +5,8 @@
 from click.testing import CliRunner
 
 from nxstart.cli import cli
-from nxstart.tests.helpers import directory_exists, assert_readme_has_project_and_author_name, \
-    assert_makefile_has_project_and_author_name, file_exists, assert_file_contains_strings, APP_AUTHOR, APP_NAME, \
+from nxstart.tests.helpers import directory_exists, readme_has_project_and_author_name, \
+    makefile_has_project_and_author_name, file_exists, file_contains_strings, APP_AUTHOR, APP_NAME, \
     DATE_CREATED
 
 
@@ -18,9 +18,9 @@ def test_libt_with_clion():
         assert result.output.endswith('Successfully created the libtransistor project!\n')
         assert directory_exists()
         assert file_exists('CMakeLists.txt')
-        assert_readme_has_project_and_author_name()
-        assert_makefile_has_project_and_author_name()
-        main_c_has_valid_data()
+        assert readme_has_project_and_author_name()
+        assert makefile_has_project_and_author_name()
+        assert main_c_has_valid_data()
 
 
 def test_libt_without_clion():
@@ -31,10 +31,10 @@ def test_libt_without_clion():
         assert result.output.endswith('Successfully created the libtransistor project!\n')
         assert directory_exists()
         assert not file_exists('CMakeLists.txt')
-        assert_readme_has_project_and_author_name()
-        assert_makefile_has_project_and_author_name()
-        main_c_has_valid_data()
+        assert readme_has_project_and_author_name()
+        assert makefile_has_project_and_author_name()
+        assert main_c_has_valid_data()
 
 
 def main_c_has_valid_data():
-    assert_file_contains_strings('main.c', [APP_NAME, APP_AUTHOR, DATE_CREATED])
+    return file_contains_strings('main.c', [APP_NAME, APP_AUTHOR, DATE_CREATED])

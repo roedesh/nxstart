@@ -4,6 +4,7 @@
 
 [![PyPI version](https://badge.fury.io/py/nxstart.svg)](https://badge.fury.io/py/nxstart)
 [![Build status](https://travis-ci.org/roedesh/nxstart.svg?branch=master)](https://travis-ci.org/roedesh/nxstart)
+[![Requirements Status](https://requires.io/github/roedesh/nxstart/requirements.svg?branch=master)](https://requires.io/github/roedesh/nxstart/requirements/?branch=master)
 
 ## Table of Contents
 

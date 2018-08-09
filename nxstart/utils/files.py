@@ -7,7 +7,7 @@ from os.path import join, dirname
 
 import click
 
-PROJECT_ROOT = dirname(dirname(__file__))
+PROJECT_ROOT = dirname(dirname(__file__))  # nxstart project directory
 
 
 def get_full_path(*path):

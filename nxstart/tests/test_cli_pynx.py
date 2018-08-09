@@ -5,7 +5,7 @@
 from click.testing import CliRunner
 
 from nxstart.cli import cli
-from nxstart.tests.helpers import assert_readme_has_project_and_author_name, assert_file_contains_strings, \
+from nxstart.tests.helpers import readme_has_project_and_author_name, file_contains_strings, \
     directory_exists, APP_NAME, APP_AUTHOR, DATE_CREATED
 
 
@@ -16,5 +16,5 @@ def test_pynx():
         assert not result.exception
         assert result.output.endswith('Successfully created the PyNX project!\n')
         assert directory_exists()
-        assert_file_contains_strings('main.py', [APP_NAME, APP_AUTHOR, DATE_CREATED])
-        assert_readme_has_project_and_author_name()
+        assert file_contains_strings('main.py', [APP_NAME, APP_AUTHOR, DATE_CREATED])
+        assert readme_has_project_and_author_name()

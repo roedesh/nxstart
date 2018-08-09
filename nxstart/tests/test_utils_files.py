@@ -4,7 +4,7 @@
 
 import os
 
-from nxstart.tests.helpers import DIRECTORY_NAME, assert_file_contains_strings
+from nxstart.tests.helpers import DIRECTORY_NAME, file_contains_strings
 from nxstart.utils.files import check_and_create_directory, PROJECT_ROOT, get_full_path, replace_in_file
 
 
@@ -28,4 +28,4 @@ def test_replace_in_file(tmpdir):
     replace_in_file(new_test_file_path, {
         'TEXT_PLACEHOLDER': 'NEW_TEXT',
     })
-    assert_file_contains_strings(new_test_file_path, ['NEW_TEXT'])
+    assert file_contains_strings(new_test_file_path, ['NEW_TEXT'])

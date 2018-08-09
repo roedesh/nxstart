@@ -28,7 +28,7 @@ def file_exists(file_path):
     return os.path.isfile(os.path.join(DIRECTORY_NAME, file_path))
 
 
-def assert_file_contains_strings(file_path, strings):
+def file_contains_strings(file_path, strings):
     """
     Make sure that each given string is in the file.
 
@@ -38,18 +38,20 @@ def assert_file_contains_strings(file_path, strings):
     with open(os.path.join(DIRECTORY_NAME, file_path), 'r') as file:
         data = file.read().replace('\n', '')
         for s in strings:
-            assert s in data
+            if s not in data:
+                return False
+    return True
 
 
-def assert_readme_has_project_and_author_name():
+def readme_has_project_and_author_name():
     """
     Checks that the README.md contains the project and author name.
     """
-    assert_file_contains_strings('README.md', [APP_NAME, APP_AUTHOR])
+    return file_contains_strings('README.md', [APP_NAME, APP_AUTHOR])
 
 
-def assert_makefile_has_project_and_author_name():
+def makefile_has_project_and_author_name():
     """
     Check that the Makefile contains the project and author name.
     """
-    assert_file_contains_strings('Makefile', [APP_NAME, APP_AUTHOR])
+    return file_contains_strings('Makefile', [APP_NAME, APP_AUTHOR])
