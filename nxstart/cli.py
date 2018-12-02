@@ -26,22 +26,27 @@ pass_context = click.make_pass_decorator(Context, ensure=True)
 
 
 @click.group()
-@click.option('--name', '-n', default=None, help='The name of your project')
-@click.option('--author', '-a', default=None, help='The full name of the author')
+@click.option("--name", "-n", default=None, help="The name of your project")
+@click.option("--author", "-a", default=None, help="The full name of the author")
 @pass_context
 def cli(ctx, name, author):
     click.echo(TITLE_TEXT)
     click.echo(VERSION_STRING)
     if not name:
-        name = click.prompt('Please enter the name of your project', type=str)
+        name = click.prompt("Please enter the name of your project", type=str)
     if not author:
-        author = click.prompt('Please enter your name', type=str)
+        author = click.prompt("Please enter your name", type=str)
     ctx.name = name
     ctx.author = author
 
 
-@cli.command('libnx', short_help='create a new libnx project (C++)')
-@click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
+@cli.command("libnx", short_help="create a new libnx project (C++)")
+@click.option(
+    "--clion/--no-clion",
+    default=False,
+    prompt="Are you using CLion?",
+    help="include CMakeLists.txt",
+)
 @pass_context
 def libnx(ctx, clion):
     """
@@ -53,8 +58,13 @@ def libnx(ctx, clion):
     app.libnx(ctx.name, ctx.author, clion, ctx.cwd)
 
 
-@cli.command('libt', short_help='create a new libtransistor project (C)')
-@click.option('--clion/--no-clion', default=False, prompt='Are you using CLion?', help='include CMakeLists.txt')
+@cli.command("libt", short_help="create a new libtransistor project (C)")
+@click.option(
+    "--clion/--no-clion",
+    default=False,
+    prompt="Are you using CLion?",
+    help="include CMakeLists.txt",
+)
 @pass_context
 def libt(ctx, clion):
     """
@@ -66,7 +76,7 @@ def libt(ctx, clion):
     app.libt(ctx.name, ctx.author, clion, ctx.cwd)
 
 
-@cli.command('brewjs', short_help='create a new BrewJS project (Javascript)')
+@cli.command("brewjs", short_help="create a new BrewJS project (Javascript)")
 @pass_context
 def brewjs(ctx):
     """
@@ -77,7 +87,7 @@ def brewjs(ctx):
     app.brewjs(ctx.name, ctx.author, ctx.cwd)
 
 
-@cli.command('pynx', short_help='create a new PyNX project (Python)')
+@cli.command("pynx", short_help="create a new PyNX project (Python)")
 @pass_context
 def pynx(ctx):
     """
