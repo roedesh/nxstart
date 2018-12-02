@@ -6,7 +6,8 @@ import datetime
 import os
 from distutils.dir_util import copy_tree
 
-from nxstart.utils.files import get_full_path, replace_in_file
+from nxstart.utils.files import (check_and_create_directory, get_full_path,
+                                 replace_in_file)
 
 
 def create_brewjs_project(folder_path, name, author):
@@ -18,21 +19,23 @@ def create_brewjs_project(folder_path, name, author):
     :param name: Name of the project
     :param author: Name of the author
     """
-    template_folder = get_full_path(os.path.join('templates', 'brewjs'))
+    template_folder = get_full_path(os.path.join("templates", "brewjs"))
     copy_tree(template_folder, folder_path)
 
-    main_js_file = os.path.join(folder_path, 'Source.js')
+    main_js_file = os.path.join(folder_path, "Source.js")
     main_js_replacements = {
-        'APP_AUTHOR_PLACEHOLDER': author,
-        'APP_NAME_PLACEHOLDER': name,
-        'DATE_PLACEHOLDER': datetime.datetime.now().strftime("%Y-%m-%d")
+        "APP_AUTHOR_PLACEHOLDER": author,
+        "APP_NAME_PLACEHOLDER": name,
+        "DATE_PLACEHOLDER": datetime.datetime.now().strftime("%Y-%m-%d"),
     }
     replace_in_file(main_js_file, main_js_replacements)
 
-    package_json_file = os.path.join(folder_path, 'package.json')
+    package_json_file = os.path.join(folder_path, "package.json")
     package_json_replacements = {
-        'APP_AUTHOR_PLACEHOLDER': author,
-        'APP_NAME_PLACEHOLDER': name,
-        'DATE_PLACEHOLDER': datetime.datetime.now().strftime("%Y-%m-%d")
+        "APP_AUTHOR_PLACEHOLDER": author,
+        "APP_NAME_PLACEHOLDER": name,
+        "DATE_PLACEHOLDER": datetime.datetime.now().strftime("%Y-%m-%d"),
     }
     replace_in_file(package_json_file, package_json_replacements)
+
+    check_and_create_directory(os.path.join(folder_path, "assets"))

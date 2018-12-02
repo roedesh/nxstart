@@ -14,8 +14,8 @@ def main():
     """
     The main loop
     """
-    print('Hello world!')
+    print("Hello world!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

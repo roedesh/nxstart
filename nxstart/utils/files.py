@@ -3,7 +3,7 @@
 """Includes functions for working with the filesystem."""
 
 import os
-from os.path import join, dirname
+from os.path import dirname, join
 
 import click
 
@@ -33,7 +33,7 @@ def replace_in_file(file, replacements):
             for src, target in replacements.items():
                 line = line.replace(src, target)
             lines.append(line)
-    with open(file, 'w') as outfile:
+    with open(file, "w") as outfile:
         for line in lines:
             outfile.write(line)
 
@@ -45,7 +45,7 @@ def check_and_create_directory(folder_path):
     :param folder_path: Directory to create
     """
     if os.path.exists(folder_path):
-        click.echo('Directory at %s is not empty.' % folder_path, err=True)
+        click.echo("Directory at %s is not empty." % folder_path, err=True)
         raise click.Abort()
 
     os.makedirs(folder_path)

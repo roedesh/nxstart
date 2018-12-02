@@ -15,7 +15,7 @@ TITLE_TEXT = """
 #    # #    #        ####    #   #    # #    #   #                                                          
     """
 
-VERSION_STRING = 'v%s - by roedesh <Ruud Schroën>' % version
+VERSION_STRING = "v%s - by roedesh <Ruud Schroën>" % version
 
 
 def generate_folder_name_and_path(name, cwd):

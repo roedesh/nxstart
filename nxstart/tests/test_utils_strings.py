@@ -4,7 +4,7 @@
 
 import os
 
-from nxstart.tests.helpers import DIRECTORY_NAME, APP_NAME
+from nxstart.tests.helpers import APP_NAME, DIRECTORY_NAME
 from nxstart.utils.strings import generate_folder_name_and_path
 
 
